@@ -6,7 +6,8 @@
 
 #include <stdbool.h>
 
-#define BOARD_SIZE 8
+#define BOARD_MAX_ROWS 16
+#define BOARD_MAX_COLUMS 16
 
 typedef enum {
     PIECE_NONE,
@@ -31,11 +32,11 @@ typedef struct {
 
 typedef struct
 {
-    Piece squares[BOARD_SIZE][BOARD_SIZE];
+    Piece squares[BOARD_MAX_ROWS][BOARD_MAX_COLUMS];
 } Board;
 
 typedef struct {
-    bool squares[BOARD_SIZE][BOARD_SIZE];
+    bool squares[BOARD_MAX_ROWS][BOARD_MAX_COLUMS];
 } Vision;
 
 void board_init_empty(Board *board);
