@@ -7,7 +7,7 @@
 #include <stdbool.h>
 
 #define BOARD_MAX_ROWS 16
-#define BOARD_MAX_COLUMS 16
+#define BOARD_MAX_COLUMNS 16
 
 typedef enum {
     PIECE_NONE,
@@ -26,17 +26,17 @@ typedef enum {
 } PieceColor;
 
 typedef struct {
-    PieceType;
-    PieceColor;
+    PieceType type;
+    PieceColor color;
 } Piece;
 
 typedef struct
 {
-    Piece squares[BOARD_MAX_ROWS][BOARD_MAX_COLUMS];
+    Piece squares[BOARD_MAX_ROWS][BOARD_MAX_COLUMNS];
 } Board;
 
 typedef struct {
-    bool squares[BOARD_MAX_ROWS][BOARD_MAX_COLUMS];
+    bool squares[BOARD_MAX_ROWS][BOARD_MAX_COLUMNS];
 } Vision;
 
 void board_init_empty(Board *board);
@@ -47,7 +47,7 @@ void vision_calculate_rook(
     const Board *board,
     Vision *vision,
     int row,
-    int colum
+    int column
 );
 
 #endif
